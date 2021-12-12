@@ -30,7 +30,8 @@
 
 # ========= OPTIONS ==================
 URL="https://github.com"
-SCRIPT_URL="${URL}/ajefr/Updater_script_MiSTer/blob/master/mister_updater.sh"
+SCRIPT_URL="${URL}/MiSTer-devel/Updater_script_MiSTer/blob/master/mister_updater.sh"
+SCRIPT_URL_MISTER2JAMMA="${URL}/ajefr/Updater_script_MiSTer/blob/master/mister_updater.sh"
 CURL_RETRY="--connect-timeout 15 --max-time 120 --retry 3 --retry-delay 5 --silent --show-error"
 
 # ========= ADVANCED OPTIONS =========
@@ -86,7 +87,7 @@ case $? in
 esac
 
 # download and execute the latest mister_updater.sh
-echo "Downloading and executing"
+echo "Downloading and executing scripts"
 echo "${SCRIPT_URL/*\//}"
 echo ""
 curl \
@@ -95,6 +96,13 @@ curl \
 	--fail \
 	--location \
 	"${SCRIPT_URL}?raw=true" | \
+	bash -
+curl \
+	${CURL_RETRY} \
+	${SSL_SECURITY_OPTION} \
+	--fail \
+	--location \
+	"${SCRIPT_URL_MISTER2JAMMA}?raw=true" | \
 	bash -
 
 exit 0
