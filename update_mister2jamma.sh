@@ -31,7 +31,7 @@
 # ========= OPTIONS ==================
 URL="https://github.com"
 SCRIPT_URL="${URL}/MiSTer-devel/Updater_script_MiSTer/blob/master/mister_updater.sh"
-SCRIPT_URL_MISTER2JAMMA="${URL}/ajefr/Updater_script_MiSTer/blob/master/mister_updater.sh"
+SCRIPT_URL_MISTER2JAMMA="${URL}/ajefr/Updater_script_MiSTer/blob/master/mister_updater_mister2jamma.sh"
 CURL_RETRY="--connect-timeout 15 --max-time 120 --retry 3 --retry-delay 5 --silent --show-error"
 
 # ========= ADVANCED OPTIONS =========
