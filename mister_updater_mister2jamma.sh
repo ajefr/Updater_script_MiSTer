@@ -14,7 +14,7 @@ if [ ! -f "$MISTER2JAMMA_UBOOT_DEST" ]; then
 	wget "$MISTER2JAMMA_UBOOT_URL" -O $MISTER2JAMMA_UBOOT_DEST
 	if [ $? -eq 0 ]; then
 		echo "Updating MISTER2JAMMA uboot"
-		cp $MISTER2JAMMA_UBOOT_DEST /media/fat/linux/uboot
+		cp $MISTER2JAMMA_UBOOT_DEST /media/fat/linux/uboot.img
 		cd /media/fat/linux/
 		./updateboot
 		cd -
