@@ -26,7 +26,7 @@ fi
 if [ ! -f "$MISTER2JAMMA_KERNEL_DEST" ]; then
 	wget "$MISTER2JAMMA_KERNEL_URL" -o $MISTER2JAMMA_KERNEL_DEST
 	if [ $? -eq 0 ]; then
-		echo "Updating MISTER2JAMMA uboot"
+		echo "Updating MISTER2JAMMA zImage"
 		cp $MISTER2JAMMA_KERNEL_DEST /media/fat/linux/zImage_dtb
 		cd -
 	else
