@@ -1,7 +1,5 @@
 #!/bin/bash
 #MISTER2JAMMA Version, aje_fr
-
-sed -i 's/^vga_scaler=0/vga_scaler=1/g' /media/fat/MiSTer.ini
  
 URL="https://github.com"
 MISTER2JAMMA_UBOOT_VERSION="MISTER2JAMMA_1.0"
