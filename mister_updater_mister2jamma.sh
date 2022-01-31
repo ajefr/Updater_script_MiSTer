@@ -1,6 +1,7 @@
 #!/bin/bash
 #MISTER2JAMMA Version, aje_fr
  
+reboot_de10=0
 sed -i 's/^direct_video=0/direct_video=1/g' /media/fat/MiSTer.ini
 
 URL="https://github.com"
@@ -20,6 +21,7 @@ if [ ! -f "$MISTER2JAMMA_UBOOT_DEST" ]; then
 		cd /media/fat/linux/
 		./updateboot
 		cd -
+		reboot_de10=1
 	else
 		echo "Cannot update MISTER2JAMMA uboot, network error"
 	fi
@@ -31,9 +33,17 @@ if [ ! -f "$MISTER2JAMMA_KERNEL_DEST" ]; then
 		echo "Updating MISTER2JAMMA zImage"
 		cp $MISTER2JAMMA_KERNEL_DEST /media/fat/linux/zImage_dtb
 		cd -
+		reboot_de10=1
 	else
 		echo "Cannot update MISTER2JAMMA kernel, network error"
 	fi
 fi
+
+if [ $reboot_de10 == 1 ]; then
+ echo "Rebooting board"
+ sudo reboot
+fi
+
+echo "MISTER2JAMMA Update Finished !"
 
 exit 0
