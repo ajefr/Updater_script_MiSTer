@@ -1,6 +1,8 @@
 #!/bin/bash
 #MISTER2JAMMA Version, aje_fr
  
+sed -i 's/^direct_video=0/direct_video=1/g' /media/fat/MiSTer.ini
+
 URL="https://github.com"
 MISTER2JAMMA_UBOOT_VERSION="MISTER2JAMMA_1.0"
 MISTER2JAMMA_UBOOT_URL="${URL}/ajefr/Updater_script_MiSTer/blob/master/release//uboot.img_${MISTER2JAMMA_UBOOT_VERSION}"
