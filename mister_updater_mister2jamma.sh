@@ -41,6 +41,7 @@ fi
 
 if [ $reboot_de10 == 1 ]; then
  echo "Rebooting board"
+ rm /media/fat/Scripts/.mister_updater/update_mister2jamma.last_successful_run.last_successful_run
  sudo reboot
 fi
 
