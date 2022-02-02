@@ -10,8 +10,8 @@ MISTER2JAMMA_UBOOT_URL="${URL}/ajefr/Updater_script_MiSTer/blob/master/release//
 MISTER2JAMMA_UBOOT_DEST="/media/fat/linux/uboot.img_${MISTER2JAMMA_UBOOT_VERSION}"
 
 MISTER2JAMMA_KERNEL_VERSION="MISTER2JAMMA_1.1"
-MISTER2JAMMA_KERNEL_URL="${URL}/ajefr/Updater_script_MiSTer/blob/master/release/zImage_dtb_${MISTER2JAMMA_UBOOT_VERSION}?raw=true"
-MISTER2JAMMA_KERNEL_DEST="/media/fat/linux/zImage_dtb_${MISTER2JAMMA_UBOOT_VERSION}"
+MISTER2JAMMA_KERNEL_URL="${URL}/ajefr/Updater_script_MiSTer/blob/master/release/zImage_dtb_${MISTER2JAMMA_KERNEL_VERSION}?raw=true"
+MISTER2JAMMA_KERNEL_DEST="/media/fat/linux/zImage_dtb_${MISTER2JAMMA_KERNEL_VERSION}"
 
 if [ ! -f "$MISTER2JAMMA_UBOOT_DEST" ]; then
 	wget "$MISTER2JAMMA_UBOOT_URL" -O $MISTER2JAMMA_UBOOT_DEST
