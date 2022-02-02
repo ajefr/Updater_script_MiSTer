@@ -1,6 +1,6 @@
 #!/bin/bash
 #MISTER2JAMMA Version, aje_fr
- 
+
 reboot_de10=0
 sed -i 's/^direct_video=0/direct_video=1/g' /media/fat/MiSTer.ini
 
@@ -13,7 +13,9 @@ MISTER2JAMMA_KERNEL_VERSION="MISTER2JAMMA_1.1"
 MISTER2JAMMA_KERNEL_URL="${URL}/ajefr/Updater_script_MiSTer/blob/master/release/zImage_dtb_${MISTER2JAMMA_KERNEL_VERSION}?raw=true"
 MISTER2JAMMA_KERNEL_DEST="/media/fat/linux/zImage_dtb_${MISTER2JAMMA_KERNEL_VERSION}"
 
+echo "Searching for $MISTER2JAMMA_UBOOT_DEST"
 if [ ! -f "$MISTER2JAMMA_UBOOT_DEST" ]; then
+	echo "Not found, updating"
 	wget "$MISTER2JAMMA_UBOOT_URL" -O $MISTER2JAMMA_UBOOT_DEST
 	if [ $? -eq 0 ]; then
 		echo "Updating MISTER2JAMMA uboot"
@@ -27,7 +29,9 @@ if [ ! -f "$MISTER2JAMMA_UBOOT_DEST" ]; then
 	fi
 fi
 
+echo "Searching for $MISTER2JAMMA_KERNEL_DEST"
 if [ ! -f "$MISTER2JAMMA_KERNEL_DEST" ]; then
+	echo "Not found, updating"
 	wget "$MISTER2JAMMA_KERNEL_URL" -O $MISTER2JAMMA_KERNEL_DEST
 	if [ $? -eq 0 ]; then
 		echo "Updating MISTER2JAMMA zImage"
@@ -41,7 +45,6 @@ fi
 
 if [ $reboot_de10 == 1 ]; then
  echo "Rebooting board"
- rm /media/fat/Scripts/.mister_updater/update_mister2jamma.last_successful_run.last_successful_run
  sudo reboot
 fi
 
