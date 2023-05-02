@@ -27,7 +27,7 @@ set -euo pipefail
 # ========= OPTIONS ==================
 CURL_RETRY="--connect-timeout 15 --max-time 600 --retry 3 --retry-delay 5"
 ALLOW_INSECURE_SSL="true"
-SCRIPT_URL_MISTER2JAMMA="https://github.com/ajefr/Updater_script_MiSTer/blob/master/mister_updater_mister2jamma.sh"
+SCRIPT_URL_MISTER2JAMMA="https://github.com/ajefr/Updater_script_MiSTer/blob/master/release/mister_updater_mister2jamma.sh"
 
 # ========= CODE STARTS HERE =========
 if [[ "${0}" == "bash" ]] ; then
