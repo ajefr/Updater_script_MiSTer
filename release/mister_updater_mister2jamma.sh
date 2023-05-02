@@ -4,6 +4,15 @@
 reboot_de10=0
 sed -i 's/^direct_video=0/direct_video=1/g' /media/fat/MiSTer.ini
 
+#update json file to avoid auto reboot
+if [ -f "/media/fat/Scripts/.config/update_all/update_all.json.zip" ]; then
+  cd /media/fat/Scripts/.config/update_all
+  unzip update_all.json.zip
+  cat <<< $(jq '.autoreboot = false' update_all.json) > update_all.json
+  zip update_all.json.zip update_all.json
+  rm -f update_all.json.zip
+fi
+
 URL="https://github.com"
 MISTER2JAMMA_UBOOT_VERSION="MISTER2JAMMA_1.0"
 MISTER2JAMMA_UBOOT_URL="${URL}/ajefr/Updater_script_MiSTer/blob/master/release//uboot.img_${MISTER2JAMMA_UBOOT_VERSION}?raw=true"
