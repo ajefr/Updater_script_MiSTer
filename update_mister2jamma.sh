@@ -77,7 +77,7 @@ set -e
 SCRIPT_PATH="/tmp/${ORIGINAL_SCRIPT_PATH/*\//}"
 rm ${SCRIPT_PATH} 2> /dev/null || true
 
-if [[ "${DEBUG_UPDATER:-false}" != "true" ]] || [ ! -f dont_download.sh ] ; then
+if [[ "${DEBUG_UPDATER:-false}" != "true" ]] || [ ! -f dont_download2.sh ] ; then
     REPOSITORY_URL="https://github.com/theypsilon/Update_All_MiSTer"
     echo "Downloading"
     echo "${REPOSITORY_URL}"
@@ -89,9 +89,9 @@ if [[ "${DEBUG_UPDATER:-false}" != "true" ]] || [ ! -f dont_download.sh ] ; then
         --fail \
         --location \
         -o "${SCRIPT_PATH}" \
-        "${REPOSITORY_URL}/blob/master/dont_download.sh?raw=true"
+        "${REPOSITORY_URL}/blob/master/dont_download2.sh?raw=true"
 else
-    cp dont_download.sh ${SCRIPT_PATH}
+    cp dont_download2.sh ${SCRIPT_PATH}
     export AUTO_UPDATE_LAUNCHER="false"
     export DEBUG_UPDATER
 fi
