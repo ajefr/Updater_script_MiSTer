@@ -1,0 +1,14 @@
+{
+    "db_id": "mister2jamma",
+    "timestamp": 1740092314,
+    "files": {
+		"/linux/zImage_dtb": {
+		"hash": "480cff04257d366e9ce93f2f541f3d3bea5832bf",
+		"size": 7425259,
+		"url": "https://github.com/ajefr/Updater_script_MiSTer/raw/refs/heads/master/release/zImage_dtb_MISTER2JAMMA_1.5e",
+		"tags": [],
+		"overwrite": true,
+		"reboot": true,
+        },
+	 },  
+}
