@@ -1,7 +1,7 @@
-#!/bin/sh
-
 #!/bin/bash
 #MISTER2JAMMA Version, aje_fr
+MISTER2JAMMA_UBOOT_VERSION="MISTER2JAMMA_1.0"
+MISTER2JAMMA_KERNEL_VERSION="MISTER2JAMMA_1.5e"
 
 reboot_de10=0
 sed -i 's/^direct_video=0/direct_video=1/g' /media/fat/MiSTer.ini
@@ -16,11 +16,9 @@ if [ -f "/media/fat/Scripts/.config/update_all/update_all.json.zip" ]; then
 fi
 
 URL="https://github.com"
-MISTER2JAMMA_UBOOT_VERSION="MISTER2JAMMA_1.0"
 MISTER2JAMMA_UBOOT_URL="${URL}/ajefr/Updater_script_MiSTer/blob/master/release//uboot.img_${MISTER2JAMMA_UBOOT_VERSION}?raw=true"
 MISTER2JAMMA_UBOOT_DEST="/media/fat/linux/uboot.img_${MISTER2JAMMA_UBOOT_VERSION}"
 
-MISTER2JAMMA_KERNEL_VERSION="MISTER2JAMMA_1.5e"
 MISTER2JAMMA_KERNEL_URL="${URL}/ajefr/Updater_script_MiSTer/blob/master/release/zImage_dtb_${MISTER2JAMMA_KERNEL_VERSION}?raw=true"
 MISTER2JAMMA_KERNEL_DEST="/media/fat/linux/zImage_dtb_${MISTER2JAMMA_KERNEL_VERSION}"
 
