@@ -1,3 +1,15 @@
+# MiSTer2JAMMA: this method is replaced
+
+The MiSTer2JAMMA driver is now a kernel module for the **official** MiSTer kernel, distributed from
+**https://github.com/ajefr/mister2jamma** (see the installation guide there). The custom 5.15 kernel and U-Boot
+from this repository do not boot on current MiSTer releases and are no longer installed.
+
+If you still use `update_mister2jamma.sh`: just run it one more time. After the update, it switches your MiSTer to
+the new driver automatically (official Linux reinstalled if needed, driver loaded at every boot, the MiSTer reboots
+by itself). After that, use `update_all` as usual: the driver is updated through its downloader database.
+
+---
+
 # Updater script for MiSTer
 The script updates all [MiSTer](https://github.com/MiSTer-devel/Main_MiSTer/wiki) cores, including menu.rbf and the main MiSTer Linux executable; it updates scaler filters, GameBoy palettes and scripts; it can (experimental and risky) optionally update the whole Linux system.<br>
 Simply put [update.sh](https://github.com/MiSTer-devel/Updater_script_MiSTer/blob/master/update.sh?raw=true) in your SD and launch it through MiSTer main menu OSD (press F12 and then Scripts).<br>
